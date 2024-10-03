@@ -10,23 +10,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-      <input class="search-bar" type="text" placeholder="Pesquisar produto...">
+  <div class="content" id="inicio">
+    <header>
+      <div>
+        <img src="./img/search-svgrepo-com.svg" alt="Search Icon" class="search-icon">
+        <input class="search-bar" type="text" placeholder="Pesquisar produto...">
+      </div>
       <h1>Produtos</h1>
       <div class="categories">
-        <span class="category active" data-category="all">Todos</span>
-        <span class="category" data-category="fille">Filés</span>
-        <span class="category" data-category="postas">Postas</span>
-        <span class="category" data-category="softs">Softs</span>
-        <span class="category" data-category="camarao">Camarão</span>
+        <span class="category active" data-category="promocoes">Promoções</span>
+        <span class="category" data-category="premium">Premium</span>
+        <span class="category" data-category="files">Filés</span>
+        <span class="category" data-category="camaroes">Camarões</span>
+        <span class="category" data-category="empanados">Empanados</span>
+        <span class="category" data-category="peixes">Peixes</span>
       </div>
   </header>
 
   <section class="product-list">
-    <div class="product" data-category="postas">
-      <img src="./img/produtos/PostadeTainha.png" alt="Posta de Tainha">
+    <div class="product" data-category="promocoes">
+      <img src="./img/produtos/PostadeTainha.png" alt="Promoção de Tainha">
       <div class="product-info">
-        <h3>Posta de Tainha</h3>
+        <h3>Promoção de Tainha</h3>
         <p>Este peixe é capturado com o auxílio do boto...</p>
         <span class="price">R$ 23,00</span> | <span>1 kg</span>
       
@@ -38,7 +43,97 @@
       </div>
     </div>
     
-    <div class="product" data-category="postas">
+    <div class="product" data-category="promocoes">
+      <img src="./img/produtos/PostadeCorvina.png" alt="Promoção de Premium">
+      <div class="product-info">
+        <h3>Posta de Promoção</h3>
+        <p>Toda peixe é capturado pela frota artesanal...</p>
+        <span class="price">R$ 25,00</span> | <span>1 kg</span>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-category="premium">
+      <img src="./img/produtos/PostadeTainha.png" alt="Posta de premium">
+      <div class="product-info">
+        <h3>Posta de Premium</h3>
+        <p>Este peixe é capturado com o auxílio do boto...</p>
+        <span class="price">R$ 23,00</span> | <span>1 kg</span>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="product" data-category="premium">
+      <img src="./img/produtos/PostadeCorvina.png" alt="premium de Filés">
+      <div class="product-info">
+        <h3>Premium de Corvina</h3>
+        <p>Toda peixe é capturado pela frota artesanal...</p>
+        <span class="price">R$ 25,00</span> | <span>1 kg</span>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-category="files">
+      <img src="./img/produtos/PostadeTainha.png" alt="Posta de files">
+      <div class="product-info">
+        <h3>Posta de Filés</h3>
+        <p>Este peixe é capturado com o auxílio do boto...</p>
+        <span class="price">R$ 23,00</span> | <span>1 kg</span>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="product" data-category="files">
+      <img src="./img/produtos/PostadeCorvina.png" alt="Posta de files">
+      <div class="product-info">
+        <h3>Filés de Corvina</h3>
+        <p>Toda peixe é capturado pela frota artesanal...</p>
+        <span class="price">R$ 25,00</span> | <span>1 kg</span>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-category="camaroes">
+      <img src="./img/produtos/PostadeTainha.png" alt="Posta de camaroes">
+      <div class="product-info">
+        <h3>Posta de Camarões</h3>
+        <p>Este peixe é capturado com o auxílio do boto...</p>
+        <span class="price">R$ 23,00</span> | <span>1 kg</span>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="product" data-category="empanados">
       <img src="./img/produtos/PostadeCorvina.png" alt="Posta de Corvina">
       <div class="product-info">
         <h3>Posta de Corvina</h3>
@@ -53,22 +148,7 @@
       </div>
     </div>
 
-    <div class="product" data-category="postas">
-      <img src="./img/produtos/PostadeTainha.png" alt="Posta de Tainha">
-      <div class="product-info">
-        <h3>Posta de Tainha</h3>
-        <p>Este peixe é capturado com o auxílio do boto...</p>
-        <span class="price">R$ 23,00</span> | <span>1 kg</span>
-      
-        <div class="product-controls">
-          <button class="decrement">-</button>
-          <span class="quantity" id="quantity-1">0 kg</span>
-          <button class="increment">+</button>
-        </div>
-      </div>
-    </div>
-    
-    <div class="product" data-category="postas">
+    <div class="product" data-category="peixes">
       <img src="./img/produtos/PostadeCorvina.png" alt="Posta de Corvina">
       <div class="product-info">
         <h3>Posta de Corvina</h3>
@@ -83,52 +163,7 @@
       </div>
     </div>
 
-    <div class="product" data-category="postas">
-      <img src="./img/produtos/PostadeTainha.png" alt="Posta de Tainha">
-      <div class="product-info">
-        <h3>Posta de Tainha</h3>
-        <p>Este peixe é capturado com o auxílio do boto...</p>
-        <span class="price">R$ 23,00</span> | <span>1 kg</span>
-      
-        <div class="product-controls">
-          <button class="decrement">-</button>
-          <span class="quantity" id="quantity-1">0 kg</span>
-          <button class="increment">+</button>
-        </div>
-      </div>
-    </div>
-    
-    <div class="product" data-category="postas">
-      <img src="./img/produtos/PostadeCorvina.png" alt="Posta de Corvina">
-      <div class="product-info">
-        <h3>Posta de Corvina</h3>
-        <p>Toda peixe é capturado pela frota artesanal...</p>
-        <span class="price">R$ 25,00</span> | <span>1 kg</span>
-      
-        <div class="product-controls">
-          <button class="decrement">-</button>
-          <span class="quantity" id="quantity-1">0 kg</span>
-          <button class="increment">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product" data-category="postas">
-      <img src="./img/produtos/PostadeTainha.png" alt="Posta de Tainha">
-      <div class="product-info">
-        <h3>Posta de Tainha</h3>
-        <p>Este peixe é capturado com o auxílio do boto...</p>
-        <span class="price">R$ 23,00</span> | <span>1 kg</span>
-      
-        <div class="product-controls">
-          <button class="decrement">-</button>
-          <span class="quantity" id="quantity-1">0 kg</span>
-          <button class="increment">+</button>
-        </div>
-      </div>
-    </div>
-    
-    <div class="product" data-category="postas">
+    <div class="product" data-category="peixes">
       <img src="./img/produtos/PostadeCorvina.png" alt="Posta de Corvina">
       <div class="product-info">
         <h3>Posta de Corvina</h3>
@@ -143,22 +178,87 @@
       </div>
     </div>
   </section>
+</div>
+
+  <!-- Tela de Conta / Login -->
+  <div class="content" id="conta" style="display: none;">
+    <header>
+      <h1>Login</h1>
+    </header>
+  
+    <main class="account-page">
+      <!-- Logo principal -->
+      <img src="./img/logo-peixe.png" alt="Sabores do Litoral Logo" class="logo">
+  
+      <!-- Formulário de login -->
+      <form class="login-form">
+        <div class="input-group">
+          <img src="./img/mail-svgrepo-com (1).svg" class="input-icon" alt="Email Icon">
+          <input type="email" placeholder="Email" required>
+        </div>
+        <div class="input-group">
+          <img src="./img/padlock-svgrepo-com.svg" class="input-icon" alt="Password Icon">
+          <input type="password" id="password-input" placeholder="Senha" required>
+          <img src="./img/eye-show-svgrepo-com.svg" id="toggle-password" class="input-eye" alt="Mostrar senha">
+        </div>
+  
+        <!-- Link para "Esqueceu sua senha?" -->
+        <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+  
+        <!-- Checkbox de concordância com os termos de uso -->
+        <div class="terms">
+          <input type="checkbox" id="agree-terms" required>
+          <label for="agree-terms">Concordo com os termos de uso</label>
+        </div>
+  
+        <!-- Botões de Ação -->
+        <div class="button-login">
+          <button type="submit" class="action-button">ENTRAR</button>
+          <button type="button" class="action-button">CRIAR CONTA</button>
+        <div class="button-login">
+
+      </form>
+  
+      <!-- Imagem decorativa no rodapé da página -->
+      <img src="./img/2.png" alt="Camarão decorativo" class="decorative-shrimp">
+    </main>
+  </div>
+
+  <!-- Tela de Carrinho -->
+  <div class="content" id="carrinho" style="display: none;">
+    <h1>Seu Carrinho de Compras</h1>
+    <div id="cart-items">
+      <!-- Aqui serão exibidos os produtos adicionados ao carrinho -->
+    </div>
+    <button type="button" id="finalizar-compra">Finalizar Compra</button>
+  </div>
+
+  <!-- Tela de Menu -->
+  <div class="content" id="menu" style="display: none;">
+    <h1>Menu Principal</h1>
+    <ul>
+      <li><a href="#" data-option="cadastrar">Cadastrar Produtos</a></li>
+      <li><a href="#" data-option="meus-pedidos">Meus Pedidos</a></li>
+      <li><a href="#" data-option="sobre-nos">Sobre Nós</a></li>
+      <li><a href="#" data-option="contato">Contatos</a></li>
+    </ul>
+  </div>
 
   <footer>
     <div class="footer-icons">
-      <a href="#" class="footer-icon">
-        <img src="./img/home-1-svgrepo-com.svg" alt="Início">
+      <a href="#" class="footer-icon active" data-target="inicio">
+        <img src="./img/home2-svgrepo-com.svg" alt="Início">
         <span>Início</span>
       </a>
-      <a href="#" class="footer-icon">
+      <a href="#" class="footer-icon" data-target="conta">
         <img src="./img/user-alt-1-svgrepo-com.svg" alt="Conta">
         <span>Conta</span>
       </a>
-      <a href="#" class="footer-icon">
+      <a href="#" class="footer-icon" data-target="carrinho">
         <img src="./img/cart-shopping-svgrepo-com.svg" alt="Carrinho">
         <span>Carrinho</span>
       </a>
-      <a href="#" class="footer-icon">
+      <a href="#" class="footer-icon" data-target="menu">
         <img src="./img/menu-list-1527-svgrepo-com.svg" alt="Menu">
         <span>Menu</span>
       </a>
