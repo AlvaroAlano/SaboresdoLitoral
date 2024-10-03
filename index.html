@@ -11,12 +11,12 @@
 </head>
 <body>
   <header>
-      <input class="search-bar" type="text" placeholder="Buscar produtos...">
+      <input class="search-bar" type="text" placeholder="Pesquisar produto...">
       <h1>Produtos</h1>
       <div class="categories">
-        <span class="category" data-category="all">Todos</span>
+        <span class="category active" data-category="all">Todos</span>
         <span class="category" data-category="fille">Filés</span>
-        <span class="category active" data-category="postas">Postas</span>
+        <span class="category" data-category="postas">Postas</span>
         <span class="category" data-category="softs">Softs</span>
         <span class="category" data-category="camarao">Camarão</span>
       </div>
@@ -29,11 +29,12 @@
         <h3>Posta de Tainha</h3>
         <p>Este peixe é capturado com o auxílio do boto...</p>
         <span class="price">R$ 23,00</span> | <span>1 kg</span>
-      </div>
-      <div class="product-controls">
-        <button>+</button>
-        <span>1 kg</span>
-        <button>-</button>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
       </div>
     </div>
     
@@ -43,95 +44,102 @@
         <h3>Posta de Corvina</h3>
         <p>Toda peixe é capturado pela frota artesanal...</p>
         <span class="price">R$ 25,00</span> | <span>1 kg</span>
-      </div>
-      <div class="product-controls">
-        <button>+</button>
-        <span>1 kg</span>
-        <button>-</button>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
       </div>
     </div>
 
+    <div class="product" data-category="postas">
+      <img src="./img/produtos/PostadeTainha.png" alt="Posta de Tainha">
+      <div class="product-info">
+        <h3>Posta de Tainha</h3>
+        <p>Este peixe é capturado com o auxílio do boto...</p>
+        <span class="price">R$ 23,00</span> | <span>1 kg</span>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
+      </div>
+    </div>
+    
     <div class="product" data-category="postas">
       <img src="./img/produtos/PostadeCorvina.png" alt="Posta de Corvina">
       <div class="product-info">
         <h3>Posta de Corvina</h3>
         <p>Toda peixe é capturado pela frota artesanal...</p>
         <span class="price">R$ 25,00</span> | <span>1 kg</span>
-      </div>
-      <div class="product-controls">
-        <button>+</button>
-        <span>1 kg</span>
-        <button>-</button>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
       </div>
     </div>
 
+    <div class="product" data-category="postas">
+      <img src="./img/produtos/PostadeTainha.png" alt="Posta de Tainha">
+      <div class="product-info">
+        <h3>Posta de Tainha</h3>
+        <p>Este peixe é capturado com o auxílio do boto...</p>
+        <span class="price">R$ 23,00</span> | <span>1 kg</span>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
+      </div>
+    </div>
+    
     <div class="product" data-category="postas">
       <img src="./img/produtos/PostadeCorvina.png" alt="Posta de Corvina">
       <div class="product-info">
         <h3>Posta de Corvina</h3>
         <p>Toda peixe é capturado pela frota artesanal...</p>
         <span class="price">R$ 25,00</span> | <span>1 kg</span>
-      </div>
-      <div class="product-controls">
-        <button>+</button>
-        <span>1 kg</span>
-        <button>-</button>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
       </div>
     </div>
 
+    <div class="product" data-category="postas">
+      <img src="./img/produtos/PostadeTainha.png" alt="Posta de Tainha">
+      <div class="product-info">
+        <h3>Posta de Tainha</h3>
+        <p>Este peixe é capturado com o auxílio do boto...</p>
+        <span class="price">R$ 23,00</span> | <span>1 kg</span>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
+      </div>
+    </div>
+    
     <div class="product" data-category="postas">
       <img src="./img/produtos/PostadeCorvina.png" alt="Posta de Corvina">
       <div class="product-info">
         <h3>Posta de Corvina</h3>
         <p>Toda peixe é capturado pela frota artesanal...</p>
         <span class="price">R$ 25,00</span> | <span>1 kg</span>
-      </div>
-      <div class="product-controls">
-        <button>+</button>
-        <span>1 kg</span>
-        <button>-</button>
-      </div>
-    </div>
-
-    <div class="product" data-category="postas">
-      <img src="./img/produtos/PostadeCorvina.png" alt="Posta de Corvina">
-      <div class="product-info">
-        <h3>Posta de Corvina</h3>
-        <p>Toda peixe é capturado pela frota artesanal...</p>
-        <span class="price">R$ 25,00</span> | <span>1 kg</span>
-      </div>
-      <div class="product-controls">
-        <button>+</button>
-        <span>1 kg</span>
-        <button>-</button>
-      </div>
-    </div>
-
-    <div class="product" data-category="postas">
-      <img src="./img/produtos/PostadeCorvina.png" alt="Posta de Corvina">
-      <div class="product-info">
-        <h3>Posta de Corvina</h3>
-        <p>Toda peixe é capturado pela frota artesanal...</p>
-        <span class="price">R$ 25,00</span> | <span>1 kg</span>
-      </div>
-      <div class="product-controls">
-        <button>+</button>
-        <span>1 kg</span>
-        <button>-</button>
-      </div>
-    </div>
-
-    <div class="product" data-category="postas">
-      <img src="/img/produtos/PostadeCorvina.png" alt="Posta de Corvina">
-      <div class="product-info">
-        <h3>Posta de Corvina</h3>
-        <p>Toda peixe é capturado pela frota artesanal...</p>
-        <span class="price">R$ 25,00</span> | <span>1 kg</span>
-      </div>
-      <div class="product-controls">
-        <button>+</button>
-        <span>1 kg</span>
-        <button>-</button>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
       </div>
     </div>
   </section>
