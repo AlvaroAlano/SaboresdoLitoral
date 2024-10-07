@@ -12,20 +12,24 @@
 <body>
   <div class="content" id="inicio">
     <header>
-      <div>
+      <div class="search-container">
         <img src="./img/search-svgrepo-com.svg" alt="Search Icon" class="search-icon">
-        <input class="search-bar" type="text" placeholder="Pesquisar produto...">
+        <input class="search-bar" id="search-bar" type="text" placeholder="Pesquisar produto...">
       </div>
       <h1>Produtos</h1>
-      <div class="categories">
-        <span class="category active" data-category="promocoes">Promoções</span>
-        <span class="category" data-category="premium">Premium</span>
-        <span class="category" data-category="files">Filés</span>
-        <span class="category" data-category="camaroes">Camarões</span>
-        <span class="category" data-category="empanados">Empanados</span>
-        <span class="category" data-category="peixes">Peixes</span>
-      </div>
-  </header>
+
+            <!-- Container das categorias -->
+            <div class="categories-container">
+              <div class="categories">
+                <span class="category active" data-category="promocoes">Promoções</span>
+                <span class="category" data-category="premium">Premium</span>
+                <span class="category" data-category="files">Filés</span>
+                <span class="category" data-category="camaroes">Camarões</span>
+                <span class="category" data-category="empanados">Empanados</span>
+                <span class="category" data-category="peixes">Peixes</span>
+              </div>
+            </div>
+          </header>
 
   <section class="product-list">
     <div class="product" data-category="promocoes">
@@ -79,6 +83,36 @@
         <h3>Premium de Corvina</h3>
         <p>Toda peixe é capturado pela frota artesanal...</p>
         <span class="price">R$ 25,00</span> | <span>1 kg</span>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-category="premium">
+      <img src="./img/produtos/PostadeTainha.png" alt="Posta de premium">
+      <div class="product-info">
+        <h3>Posta de Premium</h3>
+        <p>Este peixe é capturado com o auxílio do boto...</p>
+        <span class="price">R$ 23,00</span> | <span>1 kg</span>
+      
+        <div class="product-controls">
+          <button class="decrement">-</button>
+          <span class="quantity" id="quantity-1">0 kg</span>
+          <button class="increment">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-category="premium">
+      <img src="./img/produtos/PostadeTainha.png" alt="Posta de premium">
+      <div class="product-info">
+        <h3>Posta de Premium</h3>
+        <p>Este peixe é capturado com o auxílio do boto...</p>
+        <span class="price">R$ 23,00</span> | <span>1 kg</span>
       
         <div class="product-controls">
           <button class="decrement">-</button>
@@ -224,14 +258,71 @@
     </main>
   </div>
 
-  <!-- Tela de Carrinho -->
-  <div class="content" id="carrinho" style="display: none;">
-    <h1>Seu Carrinho de Compras</h1>
-    <div id="cart-items">
-      <!-- Aqui serão exibidos os produtos adicionados ao carrinho -->
-    </div>
-    <button type="button" id="finalizar-compra">Finalizar Compra</button>
-  </div>
+
+<!-- Tela de Carrinho -->
+<!-- Tela de Carrinho -->
+<div class="content" id="carrinho" style="display: block;">
+  <header class="cart-header">
+      <h2>Carrinho</h2>
+      <nav>
+          <a href="#">Comprar novamente</a>
+      </nav>
+  </header>
+
+  <section class="cart-summary">
+      <h3>Total <span class="total-price">R$ 0,00</span></h3>
+      <button type="button" class="checkout-btn" id="finalizar-compra">Fechar pedido (0 itens)</button>
+  </section>
+
+  <section class="cart-items">
+      <div class="cart-item">
+          <img src="./img/produtos/PostadeTainha.png" alt="Produto 1" class="cart-item-image">
+          <div class="cart-item-details">
+              <h4>Posta de Tainha</h4>
+              <p>Este peixe é capturado com o auxílio do boto...</p>
+              <span class="price">R$ 23,00</span> | <span class="quantity">0 kg</span>
+              <div class="product-controls">
+                  <button class="decrement">-</button>
+                  <span class="quantity">0 kg</span>
+                  <button class="increment">+</button>
+              </div>
+          </div>
+      </div>
+      
+      <div class="cart-item">
+          <img src="./img/produtos/PostadeCorvina.png" alt="Produto 2" class="cart-item-image">
+          <div class="cart-item-details">
+              <h4>Posta de Corvina</h4>
+              <p>Toda peixe é capturado pela frota artesanal...</p>
+              <span class="price">R$ 25,00</span> | <span class="quantity">0 kg</span>
+              <div class="product-controls">
+                  <button class="decrement">-</button>
+                  <span class="quantity">0 kg</span>
+                  <button class="increment">+</button>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <footer class="footer-icons">
+      <a href="#" class="footer-icon active">
+          <img src="./img/home2-svgrepo-com.svg" alt="Início">
+          <span>Início</span>
+      </a>
+      <a href="#" class="footer-icon">
+          <img src="./img/user-alt-1-svgrepo-com.svg" alt="Conta">
+          <span>Conta</span>
+      </a>
+      <a href="#" class="footer-icon">
+          <img src="./img/cart-shopping-svgrepo-com.svg" alt="Carrinho">
+          <span>Carrinho</span>
+      </a>
+      <a href="#" class="footer-icon">
+          <img src="./img/menu-list-1527-svgrepo-com.svg" alt="Menu">
+          <span>Menu</span>
+      </a>
+  </footer>
+</div>
 
   <!-- Tela de Menu -->
   <div class="content" id="menu" style="display: none;">
@@ -257,6 +348,7 @@
       <a href="#" class="footer-icon" data-target="carrinho">
         <img src="./img/cart-shopping-svgrepo-com.svg" alt="Carrinho">
         <span>Carrinho</span>
+        <span id="cart-count" class="cart-badge">0</span>
       </a>
       <a href="#" class="footer-icon" data-target="menu">
         <img src="./img/menu-list-1527-svgrepo-com.svg" alt="Menu">

@@ -11,7 +11,7 @@ body {
   margin-bottom: 70px; /* Espaço para o rodapé fixo */
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 header {
@@ -28,8 +28,8 @@ header {
 /* Estilização do ícone de busca */
 .search-icon {
   position: absolute;
-  left: 20px; /* Ajuste de acordo com o espaço necessário */
-  top: 35px;
+  left: 10px; /* Ajuste de acordo com o espaço necessário */
+  top: 25px;
   transform: translateY(-50%);
   width: 22px; /* Ajuste o tamanho conforme necessário */
   height: 22px;
@@ -56,39 +56,42 @@ header {
   border-color: #096F8C;
 }
 
-
-/* Títulos e layout das categorias */
-h1 {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
+/* Categorias Deslizantes */
+.categories-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  overflow-x: auto; /* permite o scroll horizontal */
+  scroll-behavior: smooth;
 }
 
 .categories {
   display: flex;
   justify-content: flex-start;
-  gap: 10px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
+  gap: 5px;
+  padding: 10px 20px;
+  background-color: #096F8C;
+  border-radius: 50px;
+  white-space: nowrap; /* Evita quebra de linha nos itens */
 }
 
+/* Categoria ativa */
 .category {
-  padding: 8px 16px;
-  background-color: #fff;
+  padding: 8px 10px;
   border-radius: 20px;
   font-size: 18px;
+  color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  white-space: nowrap;
-  margin-bottom: 10px;
 }
 
 .category:hover {
-  background-color: #CCC;
+  background-color: #707070;
 }
 
 .category.active {
-  background-color: #000;
+  background-color: #ccc;
   color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
@@ -228,7 +231,6 @@ footer {
   filter: invert(27%) sepia(84%) saturate(2558%) hue-rotate(185deg) brightness(99%) contrast(107%);
   /* Filtro que transforma o ícone em azul */
 }
-
 
 /* Estilo da página "Conta" */
 #conta {
@@ -375,9 +377,241 @@ footer {
 /* Estilo da imagem decorativa */
 .decorative-shrimp {
   position: absolute;
-  bottom: -70px;
-  right: -80px; /* Move mais para a direita */
-  width: 250px; /* Aumenta o tamanho da imagem */
-  height: auto; /* Mantém a proporção da imagem */
+  bottom: -40px;
+  right: -0px;
+  width: 200px; /* Ajuste o tamanho conforme necessário */
+  height: auto; 
   z-index: -1; /* Mantém a imagem no fundo */
+  object-fit: cover; /* Garante que a proporção seja mantida */
+  clip-path: none; /* Removi o corte da imagem para evitar distorção */
+  pointer-events: none; /* Garante que a imagem não interfira com o clique em elementos */
+}
+
+.cart-badge {
+  position: absolute;
+  top: 5px;
+  right: 125px;
+  background-color: #FF5722;
+  color: white;
+  border-radius: 50%;
+  font-size: 2px;
+  display: none; /* Inicialmente escondido */
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
+}
+
+/* Estilo geral do carrinho */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #096F8C;
+  color: white;
+}
+
+.cart-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.cart-header nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+/* Estilo da lista de produtos */
+.product-list {
+  padding: 10px 10px;
+}
+
+.product {
+  background-color: #096F8C;
+  height: 180px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  padding: 0 8px 0 0;
+}
+
+.product img {
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-info h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.product-info p {
+  margin: 10px 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Estilo dos controles de quantidade */
+.product-controls {
+  display: flex;
+  justify-content: center;
+  width: 130px;
+  margin-top: 14px;
+  padding: 4px;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.product-controls button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  text-align: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  width: 30px;
+  cursor: pointer;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  width: 50px;
+}
+
+/* Estilo do carrinho */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.cart-header nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Estilo do resumo do carrinho */
+.cart-summary {
+  padding: 15px;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.total-price {
+  font-size: 24px;
+  font-weight: 900;
+  color: #096F8C;
+}
+
+.checkout-btn {
+  width: 100%;
+  background-color: #5ea5b0;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px; /* Espaço acima do botão */
+}
+
+.checkout-btn:hover {
+  background-color: #5298a1; /* Cor ao passar o mouse */
+}
+
+/* Estilo dos itens do carrinho */
+.cart-items {
+  margin: 15px 0;
+}
+
+.cart-item {
+  display: flex;
+  background-color: #eef7f9;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+  padding-left: 15px;
+}
+
+.cart-item-details h4 {
+  font-size: 18px;
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.cart-item-details p {
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+.cart-item-details .price {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.decrement, .increment {
+  background-color: #d1d1d1;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  cursor: pointer;
 }
