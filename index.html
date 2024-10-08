@@ -258,51 +258,19 @@
     </main>
   </div>
 
-
-<!-- Tela de Carrinho -->
-<!-- Tela de Carrinho -->
-<div class="content" id="carrinho" style="display: block;">
-  <header class="cart-header">
+  <div class="content" id="carrinho" style="display: block;">
+    <header class="cart-header">
       <h2>Carrinho</h2>
-      <nav>
-          <a href="#">Comprar novamente</a>
-      </nav>
-  </header>
+    </header>
 
-  <section class="cart-summary">
+    <section class="cart-summary">
       <h3>Total <span class="total-price">R$ 0,00</span></h3>
       <button type="button" class="checkout-btn" id="finalizar-compra">Fechar pedido (0 itens)</button>
-  </section>
+    </section>
 
-  <section class="cart-items">
-      <div class="cart-item">
-          <img src="./img/produtos/PostadeTainha.png" alt="Produto 1" class="cart-item-image">
-          <div class="cart-item-details">
-              <h4>Posta de Tainha</h4>
-              <p>Este peixe é capturado com o auxílio do boto...</p>
-              <span class="price">R$ 23,00</span> | <span class="quantity">0 kg</span>
-              <div class="product-controls">
-                  <button class="decrement">-</button>
-                  <span class="quantity">0 kg</span>
-                  <button class="increment">+</button>
-              </div>
-          </div>
-      </div>
-      
-      <div class="cart-item">
-          <img src="./img/produtos/PostadeCorvina.png" alt="Produto 2" class="cart-item-image">
-          <div class="cart-item-details">
-              <h4>Posta de Corvina</h4>
-              <p>Toda peixe é capturado pela frota artesanal...</p>
-              <span class="price">R$ 25,00</span> | <span class="quantity">0 kg</span>
-              <div class="product-controls">
-                  <button class="decrement">-</button>
-                  <span class="quantity">0 kg</span>
-                  <button class="increment">+</button>
-              </div>
-          </div>
-      </div>
-  </section>
+    <section class="cart-items" id="cart-items">
+      <!-- Itens do carrinho vão aparecer aqui dinamicamente -->
+    </section>
 
   <footer class="footer-icons">
       <a href="#" class="footer-icon active">
