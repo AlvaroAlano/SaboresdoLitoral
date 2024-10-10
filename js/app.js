@@ -17,6 +17,87 @@ document.addEventListener('DOMContentLoaded', function () {
   const categoriesContainer = document.querySelector('.categories');
   const searchBar = document.getElementById('search-bar');
 
+  // Adicionar Função de Registro
+// Adicionar Função de Login
+document.querySelector('.login-form').addEventListener('submit', function(e) {
+  e.preventDefault(); // Impede o envio padrão do formulário
+
+  // Captura o valor do input de login
+  const username = this.querySelector('input[type="text"]').value.trim(); // Campo para e-mail ou telefone
+  const password = this.querySelector('input[type="password"]').value;
+
+  // Formatação do telefone para (DD) XXXXX-XXXX
+  const formattedUsername = username.replace(/\D/g, ''); // Remove caracteres não numéricos
+  const ddd = formattedUsername.substring(0, 2); // Captura o DDD
+  const phoneNumber = formattedUsername.substring(2); // Captura o restante do número
+
+  // Verifica se o username é um telefone válido
+  const finalUsername = (phoneNumber.length === 9)
+    ? `(${ddd}) ${phoneNumber}` // Formato esperado
+    : username; // Se não for um número válido, mantém o original
+
+  fetch('http://localhost:3000/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username: finalUsername, password })
+  })
+  .then(response => {
+    if (!response.ok) {
+      return response.text().then(text => { throw new Error(text); });
+    }
+    return response.json(); // Retorna os dados se a resposta for ok
+  })
+  .then(data => {
+    console.log(data);
+    localStorage.setItem('token', data.token); // Armazenando o token
+    window.location.href = 'sucesso.html'; // Redireciona para a tela de sucesso
+  })
+  .catch(error => {
+    alert(error.message); // Mostra a mensagem de erro recebida do servidor
+  });
+});
+  
+// Adicionar Função de Login
+document.querySelector('.login-form').addEventListener('submit', function(e) {
+  e.preventDefault(); // Impede o envio padrão do formulário
+
+  // Captura o valor do input de login
+  const username = this.querySelector('input[type="text"]').value.trim(); // Campo para e-mail ou telefone
+  const password = this.querySelector('input[type="password"]').value;
+
+  // Formatação do telefone para (DD) XXXXX-XXXX
+  const formattedUsername = username.replace(/\D/g, ''); // Remove caracteres não numéricos
+  const ddd = formattedUsername.substring(0, 2); // Captura o DDD
+  const phoneNumber = formattedUsername.substring(2); // Captura o restante do número
+
+  const finalUsername = phoneNumber.length === 9 
+    ? `(${ddd}) ${phoneNumber}` // Formato esperado
+    : username; // Se não for um número válido, mantém o original
+
+  fetch('http://localhost:3000/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username: finalUsername, password })
+  })
+  .then(response => {
+    if (!response.ok) {
+      return response.text().then(text => { throw new Error(text); });
+    }
+    return response.json(); // Retorna os dados se a resposta for ok
+  })
+  .then(data => {
+    console.log(data);
+    localStorage.setItem('token', data.token); // Armazenando o token
+  })
+  .catch(error => {
+    alert(error.message); // Mostra a mensagem de erro recebida do servidor
+  });
+});
+
   // Atualiza o contador de produtos no carrinho
   function updateCartCount() {
     const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0); // Soma as quantidades de todos os itens
@@ -103,6 +184,20 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 }
 
+// Evento de clique para o botão "CRIAR CONTA"
+document.getElementById('botao-criar-conta').addEventListener('click', function () {
+  showSection('criar-conta'); // Mostra a tela de criar conta
+});
+
+// Evento de clique para o botão "Voltar" na tela de criar conta
+document.getElementById('voltar-login').addEventListener('click', function () {
+  // Oculta a tela de criar conta
+  document.querySelector('#criar-conta').style.display = 'none';
+
+  // Exibe a tela de login
+  document.querySelector('#conta').style.display = 'block';
+});
+
 function updateProductQuantities() {
   products.forEach(product => {
       const productName = product.querySelector('h3').textContent;
@@ -128,7 +223,8 @@ function updateProductQuantities() {
     let existingItem = cartItems.find(item => item.name === name);
   
     if (existingItem) {
-      // Aqui está o ajuste: incrementa a quantidade do produto de forma correta, adicionando 1 por clique.
+      
+      // incrementa a quantidade do produto de forma correta, adicionando 1 por clique.
       existingItem.quantity += 1; // Incrementa apenas 1 unidade
     } else {
       cartItems.push({ name, price, quantity: 1, image }); // Se o item não existir, adiciona com 1 unidade

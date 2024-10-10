@@ -265,6 +265,7 @@ footer {
 
 .logo {
   width: 150px;
+  margin-top: 30px;
   margin-bottom: 30px;
   
 }
@@ -319,6 +320,7 @@ footer {
   color: #096F8C;
   text-decoration: none;
   margin-top: -10px;
+  margin-bottom: 18px;
 }
 
 .terms {
@@ -390,6 +392,218 @@ footer {
   text-align: center;
   line-height: 20px;
   font-weight: bold;
+}
+
+/* Estilos para a tela de boas-vindas do usuário */
+.content#usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+#usuario h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Estilos para a tela de criar conta */
+#criar-conta header {
+  display: flex;
+  flex-direction: column; /* Coloca os itens um embaixo do outro */
+  align-items: flex-start; /* Garante que os itens fiquem alinhados à esquerda */
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button img {
+  width: 28px;
+  height: 28px;
+}
+
+#criar-conta h1 {
+  font-size: 30px;
+  margin: 0; /* Remove o espaçamento padrão */
+  color: black; /* Ajuste a cor do texto conforme necessário */
+}
+
+
+#criar-conta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0px 20px 20px 20px;
+}
+
+.create-account-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.create-account-container .logo {
+  width: 140px;
+  margin: 0;
+}
+
+.create-account-form {
+  width: 100%;
+  max-width: 350px;
+}
+
+.create-account-form .input-group {
+  display: flex;
+  align-items: center;
+  background-color: #E2F3F8;
+  border-radius: 30px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+}
+
+.create-account-form .input-group input {
+  border: none;
+  background: none;
+  width: 100%;
+  padding-left: 40px;
+  font-size: 16px;
+}
+
+.create-account-form .input-icon {
+  position: absolute;
+  left: 15px;
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+}
+
+.create-account-form .input-eye {
+  position: absolute;
+  right: 15px;
+  width: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.create-account-form .action-button {
+  width: 60%; /* Define 60% da largura do contêiner */
+  background-color: #096F8C;
+  color: white;
+  font-weight: bold;
+  padding: 15px 0;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.create-account-form .action-button:hover {
+  background-color: #005662;
+}
+
+/* Separador entre o botão de criar conta e os botões sociais */
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  color: #333;
+}
+
+.separator span {
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.separator:before, .separator:after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #000;
+}
+
+/* Estilos para os botões sociais */
+.social-button {
+  background-color: #5ea5b0;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  width: 80%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 50px;
+  border: none;
+  margin-top: 12px;
+}
+
+.social-button img {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.social-button span {
+  background-color: #5ea5b0;
+}
+
+.google {
+  background-color: #5ea5b0;
+  color: white;
+  font-weight: 500;
+  width: 80%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user-button {
+  background-color: #006C7D;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 80%;
+  max-width: 300px;
+}
+
+.user-button:hover {
+  background-color: #005662;
+}
+
+.admin-button {
+  display: none; /* Oculta o botão por padrão */
+}
+
+/* Para mostrar o botão "Gerenciar Produtos" para administradores */
+.admin .admin-button {
+  display: block;
 }
 
 /* Estilo geral do carrinho */
@@ -549,21 +763,24 @@ footer {
 }
 
 /* Estilo dos itens do carrinho */
-.cart-items {
-  margin: 15px 0;
-}
 
 .cart-item {
+  margin: 15px 0;
   display: flex;
   background-color: #eef7f9;
+  height: 170px;
   padding: 15px;
   border-radius: 12px;
   margin-bottom: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
+.cart-item-info {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
 .cart-item img {
-  width: 80px; /* Definindo uma largura fixa */
+  width: 130px; /* Definindo uma largura fixa */
   height: auto; /* Mantendo a proporção correta */
   object-fit: cover; /* Garantindo que a imagem se ajuste sem distorção */
   border-radius: 8px; /* Para combinar com o design */
@@ -591,10 +808,11 @@ footer {
   font-size: 14px;
   margin: 0 0 8px;
 }
-
-.cart-item-details .price {
-  font-size: 16px;
-  font-weight: 500;
+.cart-item-price {
+  display: flex;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 20px;
 }
 
 .cart-item-controls {

@@ -228,7 +228,7 @@
       <form class="login-form">
         <div class="input-group">
           <img src="./img/mail-svgrepo-com (1).svg" class="input-icon" alt="Email Icon">
-          <input type="email" placeholder="Email" required>
+          <input type="text" placeholder="E-mail ou Telefone" required>
         </div>
         <div class="input-group">
           <img src="./img/padlock-svgrepo-com.svg" class="input-icon" alt="Password Icon">
@@ -239,18 +239,10 @@
         <!-- Link para "Esqueceu sua senha?" -->
         <a href="#" class="forgot-password">Esqueceu sua senha?</a>
   
-        <!-- Checkbox de concordância com os termos de uso -->
-        <div class="terms">
-          <input type="checkbox" id="agree-terms" required>
-          <label for="agree-terms">Concordo com os termos de uso</label>
-        </div>
-  
         <!-- Botões de Ação -->
         <div class="button-login">
           <button type="submit" class="action-button">ENTRAR</button>
-          <button type="button" class="action-button">CRIAR CONTA</button>
-        <div class="button-login">
-
+          <button type="button" class="action-button" id="botao-criar-conta">CRIAR CONTA</button>
       </form>
   
       <!-- Imagem decorativa no rodapé da página -->
@@ -258,6 +250,67 @@
     </main>
   </div>
 
+  <!-- Tela de boas-vindas do usuário -->
+<div class="content" id="usuario" style="display: block;">
+  <h1>Olá, Álvaro</h1>
+  <div class="buttons-container">
+    <button class="user-button">Meus Pedidos</button>
+    <button class="user-button">Cadastrar Endereço</button>
+    <button class="user-button">Editar Perfil</button>
+    <button class="user-button admin-button" style="display: none;">Gerenciar Produtos</button>
+  </div>
+</div>
+
+  <!-- Tela de Criar Conta -->
+<div class="content" id="criar-conta" style="display: none;">
+  <header>
+    <button class="back-button" id="voltar-login">
+      <img src="./img/arrow-left-circle-svgrepo-com.svg" alt="Voltar">
+    </button>
+    <h1>Criar Conta</h1>
+  </header>
+  <div class="create-account-container">
+    <!-- Logo -->
+    <img src="./img/logo-peixe.png" alt="Sabores do Litoral Logo" class="logo">
+
+    <!-- Formulário de criação de conta -->
+    <form class="create-account-form">
+      <div class="input-group">
+        <img src="./img/user-alt-1-svgrepo-com.svg" class="input-icon" alt="Ícone de usuário">
+        <input type="text" placeholder="Nome Completo" required>
+      </div>
+      <div class="input-group">
+        <img src="./img/mail-svgrepo-com.svg" class="input-icon" alt="Ícone de e-mail">
+        <input type="text" placeholder="Número de celular ou e-mail" required>
+      </div>
+      <div class="input-group">
+        <img src="./img/padlock-svgrepo-com.svg" class="input-icon" alt="Ícone de senha">
+        <input type="password" placeholder="Senha" required>
+        <img src="./img/eye-show-svgrepo-com.svg" class="input-eye" alt="Mostrar senha">
+      </div>
+
+      <!-- Botão de criar conta -->
+      <button type="submit" class="action-button">ENTRAR</button>
+
+      <div class="separator">
+        <span>ou</span>
+      </div>
+
+      <!-- Botões sociais -->
+      <button type="button" class="social-button facebook">
+        <img src="./img/Facebook_Logo_2023.png" alt="Facebook">
+        <span>Continuar com Facebook</span>
+      </button>
+      <button type="button" class="social-button google">
+        <img src="./img/Google_Icons-09-512.webp" alt="Google">
+        <span>Continuar com Google</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+
+ <!-- Carrinho -->
   <div class="content" id="carrinho" style="display: block;">
     <header class="cart-header">
       <h2>Carrinho</h2>
